@@ -1,0 +1,926 @@
+INFINITI Dashboard
+Observatory
+
+Understanding reactions and expectations to the proposed ownership dashboard
+
+(xe) INFINITI 19th March 2024
+
+ AGENDA
+1. OBJECTIVES AND APPROACH
+2. FEEDBACK ON PROPOSED FUNCTIONALITIES
+
+3. EXPANSION AND IMPROVEMENTS SUGGESTIONS
+4. SUMMARY AND RECOMMENDATIONS
+
+19th March 2024
+
+(TP)
+
+INFINITI
+
+Alliance Internal
+ 1. OBJECTIVES AND
+APPROACH
+
+ SUMMARY
+BACKGROUND & APPROACH
+
+BACKGROUND RESEARCH OBJECTIVE
+
+Nissan is currently developing a new design and * Identify what kind of information and actions
+offering for their ownership dashboards, which will customers would like to access from this dashboard
+inspire the INFINITI dashboard as well. This * Understand which of the Nissan dashboard
+
+functionalities matter most and are most relevant to
+
+research will seek to understand how relevant the
+customers.
+
+features of the Nissan dashboard are and how
+they can be expanded to better suit a more
+
+demanding customer base. We will also seek to
+uncover further expectations that consumers have * Identify ways In which the INFINITI membership could
+
+of a tool like this, and any VALUE EGR INEING OOo?
+
+functions/luxury/technology additions that are To help in the process of establishing clear guidance on
+
+expected. how to elevate the Nissan dashboard functionalities and
+design to make it a more engaging space for luxury
+customers, as well as understanding how to best
+integrate the membership experience into the dashboard.
+
+ow
+
+4 INFINITI Dashboard Observatory 19th March 2024 INFINITI
+
+Alliance Internal
+
+* Explore ways to expand the functionalities to make
+different elements feel more INFINITI-specific
+
+ OUR PARTICIPANTS
+WHO ARE THEY?
+
+APPROACH
+
+METHODOLOGY:
+
+INFINITI VOICE COMMUNITY
+
+Survey: to understand what general
+expectations from an ownership
+dashboard are, how the proposed
+functionalities are perceived, and
+what could be improved to make it
+more reminiscent of a premium
+brand
+
+5 INFINITI Dashboard Observatory
+
+SAMPLE:
+
+US
+o n=49
+
+UAE
+o n=17
+
+19th March 2024
+
+PARTICIPANTS FEATURES:
+
+High income
+
+New car owners in past 3 years
+
+Non-rejectors of INFINITI and EV
+
+Mix of Current INFINITl-owners, Previous INFINITI
+owners, Intender who decided against purchase
+
+o All luxury car brand intenders
+
+o0o°0 0
+
+MARKETS:
+
+=
+
+ow
+
+INFINITI
+
+Alliance Internal
+ 2. FEEDBACK ON PROPOSED
+FUNCTIONALITIES
+
+ AN OWNERSHIP DASHBOARD IS PREDOMINANTLY
+EXPECTED TO BE A FUNCTIONAL SOURCE OF
+
+INFORMATION AND ASSISTANCE
+
+UNPROMPTED, THESE ARE CUSTOMERS’ MAIN PRIORITIES IN
+
+A DASHBOARD:
+
+Product-specific information such as detailed real-time car specifications,
+user manuals, warranty details, and troubleshooting guides for their
+vehicle.
+
+i
+
+Financial overview including loan balances, payment details and
+schedules, and expenses.
+
+Support: Access to FAQs, customer support contacts, and
+possibly chatbots for immediate assistance.
+
+bo |i
+
+In the US, several also would expect to visit the dashboard for order
+je) updates before receiving their car. It is worth considering making the
+
+i dashboard a single source of truth. Our app observatory project for
+Nissan highlights which advanced apps are doing this well.
+7 INFINITI Dashboard Observatory 19th March 2024
+
+“| expect to see all of my technical
+settings in regards to my car such as
+tire pressure and oil change status. |
+would also like to see my financial
+details such as the date of my last
+payment."
+
+“My ideal ownership dashboard combines
+ease of use with comprehensive information.
+Its features include comprehensive tracking
+of the car, with statistics on maintenance
+and engine condition. | can track previous
+service requests and repairs, including cost
+and parts used. It provides information on
+insurance, fees, and taxes, with customized
+alerts for maintenance and notifications of
+potential issues.”
+
+UAE
+
+INFINITI
+
+Alliance Internal
+ THE IDEAL OWNERSHIP DASHBOARD HAS ALL CAR-
+RELATED FUNCTIONS TOGETHER IN ONE PAGE
+
+IDEALLY, CUSTOMERS WOULD WANT THE In their words...
+
+FOLLOWING FROM THEIR OWNERSHIP
+DASHBOARD: "A dashboard should be a page
+which contains all information
+about a user, such as their
+profile details, customized
+preferences and categories
+which includes and navigates to
+different sections of the website
+linking to different products and
+services, a notification icon is
+also necessary to inform users of
+newly launched services and
+latest development."
+
+* Intuitive interface displaying all information on a single
+page, with key functionalities being prioritized
+
+* Opt-in real-time alerts and notifications for vehicle recalls,
+maintenance updates, and other important information
+
+* Details about loyalty points, membership levels, and special
+offers or incentives
+
+* Most assume they'll access their account over their phone/
+app, so smartphone integration is crucial
+
+US
+
+This aligns with Nissan's wider one app
+
+strategy: it reinforces that a well-functioning
+
+dashboard is foundational to an engaging app
+
+“A smart 1-click, easy, connected
+
+feature."
+URN
+
+8 INFINITI Dashboard Observatory 19th March 2024 INFINITI
+
+Alliance Internal
+
+ PROPOSED FUNCTIONALITIES FEEL RELEVANT TO
+CUSTOMERS MAKING THE DASHBOARD A VALUE-ADD TO
+
+THEIR OWNERSHIP
+
+DISPLAYED FIRST IMPRESSIONS ON THE FUNCTIONALITIES WERE
+FUNCTIONALITIES POSITIVE
+
+OL% across markets agree that the these functionalities are
+° relevant to them and their needs
+
+The general sentiment is positive, as the functionalities
+feel useful, and as everything car-related would be in
+one place, it fulfils peoples’ need of convenience
+
+— People appreciate how comprehensive these
+7 functionalities are; additionally, the displayed order (left)
+
+is picked up on positively
+
+In particular ‘Your service bookings’ and ‘Your vehicle
+key dates’ are well-liked as they proactively remove a
+hassle
+
+Q2: What are your initial thoughts and reactions? (n=66) ww
+INFINITI
+
+9 INFINITI Dashboard Observatory 19th March 2024
+Alliance Internal
+ FUNCTIONALITIES THAT ARE TAILORED TO OWNERSHIP
+AND MAKE IT EASIER TO NAVIGATE ARE THE MOST
+
+IMPORTANT
+
+RANKING OF THE MOST
+IMPORTANT
+FUNCTIONALITIES:
+
+1. Your cars
+Your car information
+
+Your vehicles key dates
+
+2
+
+3
+
+4. Your service bookings
+
+5. Track my order
+
+6. Your new finance contract
+
+7. Recommended for your car
+8. Test Drives
+
+Yo UAE ranked your finance contract
+
+high as well, as they appreciate the
+holistic planning it enabled
+
+10 INFINITI Dashboard Observatory
+
+CUSTOMERS LIKE THESE
+FUNCTIONALITIES,
+BECAUSE:
+
+* Your cars: An exciting place where
+they can see their owned car as well
+as vehicle options they have recently
+saved or are new
+
+* Your car information: time-saving as
+everything is in one place and ensures
+nothing gets lost
+
+* Your vehicle key dates (closely
+followed by your service bookings):
+eases worries not to forget about
+appointments and helps facilitate
+vehicle maintenance
+
+Q3 [Overall score]: Please select three functionalities that
+you think are most important for your future dashboard?
+(n=66)
+
+19th March 2024
+
+In their words...
+
+“Instead of having to search through
+emails, it’s good to have a particular
+place to go and be able to track
+down maintenance dates and
+warranties.”
+
+US
+
+“| think having a place to see what
+I’m interested in can persuade me to
+upgrade or trade in my car. If | see
+options | have browsed with cool
+new features I’m likely to make a
+decision to change.”
+
+US
+
+ow
+
+INFINITI
+
+Alliance Internal
+ FUNCTIONS THAT ARE NOT DIRECTLY LINKED TO
+OWNERSHIP ARE DEEMED LESS IMPORTANT
+
+11
+
+RANKING OF THE LEAST
+
+IMPORTANT
+FUNCTIONALITIES:
+
+1. Test Drives
+
+Track my order
+Recommended for your car
+Your cars
+
+Your new finance contract
+Your vehicles key dates
+
+Your service bookings
+
+own OY PF YN
+
+Your car information
+
+Q10[Overall score]: Please rank three functionalities that
+you think are least important for your future dashboard?
+(n=66)
+
+INFINITI Dashboard Observatory
+
+CUSTOMERS DISLIKE
+THESE
+FUNCTIONALITIES,
+BECAUSE:
+
+—:
+
+Test drives: similarly to track my
+order, this functionality loses
+relevance once the car is purchased
+
+Track my order: only useful during
+car purchase
+
+Recommended for your car:
+Perceived as irrelevant or an upselling
+strategy by some
+
+The scores were less pronounced
+as when it came to most
+important, indicating that all these
+functionalities have a space on
+the dashboard
+
+19th March 2024
+
+In their words...
+
+“After my car is delivered, | would not
+need to track its order progress
+anymore. Additionally, | would be
+able to find most of the information |
+need about my car through the other
+functionalities, like "My cars.”
+
+US
+
+“Booking test drives is not that
+important after the initial purchase
+to me. And even if | do want to have
+a driving experiences, it's possible to
+schedule appointments directly
+without the need to refer to the
+dashboard.”
+
+UAE
+
+INFINITI
+
+Alliance Internal
+ TO MAKE THE DASHBOARD A PLACE OWNERS REGULARLY
+ENGAGE WITH, IT NEEDS TO MAKE LIFE TANGIBELY EASIER
+FOR THEM
+
+ALL IN ONE PLACE
+
+On numerous occasions,
+customers emphasized the
+preference and importance of
+having all information ina
+single page, instead of
+different accounts/ apps.
+
+12 INFINITI Dashboard Observatory
+
+REMOVES MY
+
+HEADACHE
+
+Key dates as well as
+reminders were repeatedly
+praised as crucial for adding
+
+real value to car owner.
+
+People feel this will take the
+chore element out of the car
+
+ownership, and therefore
+minimises pain points.
+
+19th March 2024
+
+SUPER RELEVANT
+
+Customers are quite strict
+with which content they
+deem relevant for their
+ownership dashboard,
+
+namely car-specific
+information. The dashboard
+should not become over-
+crowded.
+
+ow
+INFINITI
+
+Alliance Internal
+ 4. EXPANSION AND
+IMPROVEMENTS
+SUGGESTIONS
+
+ TO MAKE THE DASHBOARD TRULY SPECIAL, IT SHOULD
+FUNCTION AS A PERSONAL ASSISTANT FOR YOUR CAR
+
+CUSTOMERS WANT THE DASHBOARD TO WORK
+FOR THEM AND HELP THEM MANAGE THEIR TIME
+EFFICIENTLY
+
+o Reminders about upcoming maintenance/ required servicing
+with possibility to schedule those within the dashboard
+
+o Integration with technology, such as phone synchronization
+and automatic updates without glitches; this builds on the
+desire for having everything in one place
+
+Any innovation that eliminates extra steps and frees up
+headspace is perceived as luxurious
+
+Several also have the expectation that a luxury brand should
+poe offer owner-exclusive events etc. They would also want to
+
+use the dashboard to stay informed on those.
+
+14 INFINITI Dashboard Observatory 19th March 2024
+
+In their words...
+
+“My initial thoughts are that it needs to be
+segmented out into the most optimal type of
+information that | would need. | think that's
+important so then | can keep track of
+everything and integrate it into my own
+personal schedule.”
+
+US
+
+“| would want my dashboard to help me
+stay on top of any scheduled
+maintenance dates as well as any
+upcoming payments. People are busy
+and tend to forget so it would be great
+to have an occasional reminder.”
+
+UAE
+
+ow
+
+INFINITI
+
+Alliance Internal
+ WITHOUT BEING PROMPTED, SOME CUSTOMERS VOICED EXPECTATIONS FOR THE
+DASHBOARD TO INFORM THEM ABOUT THE WIDER OWNERSHIP EXPERIENCE:
+
+“I'm missing a section with more perks! Events, discounts, partnerships with luxury brands."
+US
+
+“| would expect to also see icons with details of activities | can subscribe to in order to enjoy benefits
+
+and perks available for ownership."
+US
+
+“This section would also provide access to reviews from other customers, fostering a community-
+driven approach. Additionally, the dashboard should seamlessly integrate with other services
+relevant to the product, such as warranty registration, loyalty programs, and suggestions for related
+
+accessories."
+UAE
+“The perfect dashboard includes information like your membership level, any points or loyalty
+information, upcoming purchases or events (like an appointment or trip if it's travel related) or
+current subscriptions."
+US
+
+ow
+
+INFINITI
+
+15 INFINITI Dashboard Observatory 19th March 2024
+Alliance Internal
+ PERSONALISATION IS A POPULAR WAY TO ELEVATE AN
+OWNERSHIP DASHBOARD TO MAKE IT FEEL MORE
+PREMIUM
+
+BOTH, AUTOMATIC AND ENABLED
+PERSONALISATION ARE WELL LIKED:
+
+In their words...
+
+“Enhancing my dashboard might
+include reminding me of bespoke
+events like luxury automotive shows,
+VIP test-drive invitations, or exclusive
+INFINITI owner events in my area.
+This would contribute to a more
+distinguished and upscale experience.”
+UAE
+
+¢ Tips for car maintenance and an enhanced
+driving experience, based on the product
+they own
+
+* Personalized recommendations such as
+accessory and add-ons for their vehicle but
+also beyond (such as events etc.) For example, it would be great to
+
+have personalized recommendations
+
+or tips based on the product | own. It
+could suggest accessories or
+compatible products that might
+enhance my overall experience."
+
+* Customize the homepage to individual
+needs - this could be around alerts but also
+e.g. the colour scheme
+
+US
+
+(TP)
+
+16 INFINITI Dashboard Observatory 19th March 2024 INFINITI
+
+Alliance Internal
+ US AND UAE SPECIFIC NUANCES GIVE AN INDICATION OF
+WHAT MARKETS APPRECIATE IN PARTICULAR
+
+ES US WOULD LIKE SYNCHRONIZATION TO GO
+
+=~ FURTHER
+
+o Some customers would like even more synchronisation: they
+suggest the ability to record maintenance performed outside of
+the dealership and have all vehicle information available in one
+place, having one place for all car history
+
+CO venicie SAFETY AND CHATBOTS ARE WANTED IN
+UAE
+o Adding a car security information section in case of accidents
+or emergencies, as well as the possibility to track their vehicle
+on the dashboard
+
+o UAE customer appreciate their problems solved immediately;
+an integrated live chat option is suggested by several
+
+(TP)
+
+17 INFINITI Dashboard Observatory 19th March 2024 INFINITI
+
+Alliance Internal
+ ATTENTION TO DETAIL ON THE VISUAL LOOK AND FEEL IS
+
+EXPECTED FROM A PREMIUM BRAND
+
+THE DASHBOARD'S IDEAL LOOK
+AND FEEL:
+People prefer the dashboard to have a neutral colour-
+
+mS scheme, matching the INFINITI-website, to create a
+premium look. There are mentions of being able to
+customize the dashboard yourself by selecting different
+information and design
+A straightforward-to-use and intuitive layout is preferred,
+which makes it easy to find important features and
+services — people dislike over-cluttered spaces
+
+.
+HIT
+
+ASSSS
+
+We know from previous projects that the use of modern
+
+A fonts, high-quality imagery, and attention to visual detail is
+expected and this is reinforced yet again - the dashboard
+should read as an extension of the brand, not an
+afterthought
+
+18 INFINITI Dashboard Observatory 19th March 2024
+
+In their words...
+
+“| think if | were to design it, it
+would feel customized and tailored
+to each customer. So. it feels more
+personal and like we truly care for
+each customer individually."
+
+US
+
+“Your Cars: Enhancing this section
+by incorporating high-resolution
+images, detailed specifications, and
+customization options could elevate
+the presentation, providing users
+with a visually rich and luxurious
+experience."
+
+UAE
+
+ow
+
+INFINITI
+
+Alliance Internal
+ WHILE THE PRIMARY DEMAND IS TO ENHANCE THE
+FUNCTIONALITY, THERE ARE WAYS TO MAKE THE
+DASHBOARD MORE INSPIRATIONAL
+
+PEOPLE PREDOMINANTLY SEEK CAR-
+SPECIFIC INFORMATION AND ASSISTANCE...
+
+As INFINITI is a luxury brand, people expect the functionality of their ownership
+dashboard to be on the next level - hyper-personalization and synchronisation are
+ways to achieve this. This should be the focus of the page, as it is the main reason
+why people revisit it.
+
+“Having membership and other events
+information readily available on the dashboard
+
+... BUT EXPRESS CURIOSITY TO ORGANICALLY could help increase member engagement and
+
+LEARN MORE ABOUT THE BRAND Ee
+
+However, customers also see the ownership dashboard as a place to learn and engage
+more with the brand, on their own terms (as opposed a newsletter). Therefore, a
+section around new innovations and upcoming events should be included.
+
+(TP)
+
+19 19th March 2024 INFINITI
+
+INFINITI Dashboard Observatory Alliance Internal
+ INCLUDING THE MEMBERSHIP ON THE DASHBOARD COULD
+BE A WAY TO MAKE IT MORE ENGAGING BUT ELEVATION IS
+
+KEY
+
+INCLUDED ALONG THE INCLUDED ON THE HAVING A DESIGNATED
+INFORMATION DASHBOARD BUT INA SPACE FOR THE
+SPECIFIC SPACE MEMBERSHIP
+
+o People see it as part of their
+purchase, and therefore it o Better organisation o Customers feel, as this
+would come at an extra cost,
+
+goes with the rest of the p rs ding th
+owner information ° Gin te , ing tne the membership space should
+main ta feel special and dedicated
+
+o Easiest way to access it
+
+feel elevated from non-members. Consider integrating the membership under an exciting banner,
+
+> While ease of access definitely trumps other considerations, there is still demand to make members
+making people who didn't opt-in feel like they are missing out
+
+Q12 [SS]: Do you think the management of this membership (membership access, events, status) should be included on the dashboard?
+n=63)
+
+(n=6.
+INFINITI
+
+20 INFINITI Dashboard Observatory 19th March 2024
+Alliance Internal
+ 6. SUMMARY AND
+RECOMMENDATIONS
+
+ EXECUTIVE SUMMARY
+
+CENTRAL HUB
+FOR ALL KEY CAR
+INFO
+
+Customers’ expectations
+around an ownership
+dashboard are mainly
+focused on easy information
+gathering .
+
+Being able to access key
+facts and dates around their
+car purchase is paramount;
+the dashboard is less
+considered a space they'd use
+for exploration and
+inspiration.
+
+22 INFINITI Dashboard Observatory
+
+THE FACTS ATA
+GLANCE
+
+Functionalities which gather
+all required info around the
+car (specifics, manuals,
+maintenance, finance etc.) are
+top of mind, and essential to
+any car owner.
+
+Other information is deemed
+less relevant. While it's
+appealing to book test drives
+and track orders on the
+dashboard, these
+functionalities quickly feel
+irrelevant post-delivery
+
+“A PA FOR YOUR
+CAR"
+
+In an ideal world, the
+dashboard would remove any
+required headspace related to
+car admin work.
+
+Customers would like the
+system to know about
+upcoming service
+appointments and remind
+them automatically, as if it
+was fulfilling a role of a
+personal assistant.
+
+19th March 2024
+
+WAYS TO
+EXPLORE A
+PREMIUM FEEL
+
+While owners will
+predominantly use the
+ownership dashboard for
+functional purposes, there are
+ways to include a luxury feel.
+
+This can be achieved through
+a highly personalized display,
+a sleek aesthetic as well as
+through the inclusion of
+INFINITI-specific perks.
+
+ow
+
+INFINITI
+
+Alliance Internal
+ THESE ARE THE NEXT STEPS INFINITI SHOULD TAKE TO
+MAKE THEIR OWNERSHIP DASHBOARD OFFERING A
+SUCCESS:
+
+WAYS TO WOW:
+
+app- be it car operation and information (which should take centre-stage) as well as
+appointment scheduling. The option to synchronize their personal calendar with their
+ownership account should also be a consideration
+
+Show me you know me: people showed interest in a wide range of information around
+their car purchase. Include all the proposed functionalities as customers found them all to
+be value adding. Functionalities that become less relevant over time (test drive etc.) can
+fade into the background once the car is purchased. While a section around car
+enhancements is appreciated, the dashboard should not feel like a sales channel for
+INFINITI.
+
+PU OU" Recognise and appreciate the owner: independent of the membership program, owners
+
+FER would expect certain perks being offered to them for being an INFINIT-brand purchaser.
+Include a space on the dashboard which informs customers on upcoming releases and
+events, brand news and the membership.
+
+ay Less is more: people want full integration, so offer owners everything the need in one
+
+ow
+
+23 INFINITI Dashboard Observatory 19th March 2024 INFINITI
+
+Alliance Internal
+ THANK YOU “a
+
+(xe) INFINITI 19th March 2024
+
+Alliance Internal
+ gabriel.pedrosa@nissan.co.uk
+
+grace.power@cspace.com
+
+christina.detsch@cspace.com
+yassamine.ghazzali@cspace.com
+
+tracy.cheng@cspace.com
+
+INFINITI Dashboard Observatory 19th March 2024
+
+TP)
+
+INFINITI
+
+Alliance Internal
+ APPENDIX
+
+TP)
+
+INFINITI Dashboard Observatory 19th March 2024 INFINITI
+
+Alliance Internal
+ RANKING OF THE MOST IMPORTANT FEATURES
+
+Ranking of MOST important features
+
+44%
+21% 21%
+18% 18%17%
+1h% 7 15%15%
+11% 11% 11%
+
+o% 7 8% 19% oe ; 8% ., 9%
+= ll --8 Es
+i oO oO
+
+Your cars Your car Your vehicles key Your service Track my order Your new finance Recommended for Test Drives
+information dates bookings contract your car
+Mist place ™2nd place m3rd place
+Q3: Please select three functionalities that you think are most important for your future
+dashboard? (n=66)
+ow
+27 INFINITI Dashboard Observatory 19th March 2024 INFINITI
+
+Alliance Internal
+ RANKING OF THE LEAST IMPORTANT FEATURES
+
+Ranking of LEAST important features
+
+29%
+21% 21%
+18% 17% 17% 18%
+15% 7 15% : 1%
+12% 12% 12%
+P
+: hk ’ : : y |
+Test Drives Track my order |= Recommended for Your cars Your new finance Your vehicles key
+your car contract dates
+Mist place ™2nd place m3rd place
+Q10: Please select three functionalities that you think are least important for your future
+dashboard? (n=66)
+28 INFINITI Dashboard Observatory 19th March 2024
+
+9%
+5% 6%
+
+Your service
+bookings
+
+6% 6%
+
+a ft
+
+Your car
+information
+
+(TP)
+
+INFINITI
+
+Alliance Internal
