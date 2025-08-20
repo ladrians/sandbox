@@ -1,0 +1,274 @@
+openapi: 3.0.0
+info:
+  title: "evaluationResultApi"
+  description: "evaluation Result Api"
+  version: "20250131151624"
+servers:
+  - url: https://geaevaluation-desa.kube.genexusconsulting.com
+paths:
+  /evaluationResult/{evaluationResultId}:
+    get:
+      tags:
+        - evaluationResultApi  
+      operationId: "evaluationResultApi.getEvaluationResult"
+      summary: "getEvaluationResult"
+      parameters:
+        - name: "evaluationResultId"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+            format: "uuid"
+      
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/evaluationResultSDT"  
+
+        404:
+          description: "Not found"
+
+  /evaluationResults/{evaluationPlanId}:
+    get:
+      tags:
+        - evaluationResultApi  
+      operationId: "evaluationResultApi.listEvaluationResult"
+      summary: "listEvaluationResult"
+      parameters:
+        - name: "evaluationPlanId"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+            format: "uuid"
+      
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/evaluationResultSDT"  
+
+        404:
+          description: "Not found"
+
+components:
+  schemas:
+  
+    evaluationResultSDT:
+      properties:
+        dataSetId:
+          description: "dataset id"
+          type: "string"
+          format: "uuid"
+        evaluationPlanId:
+          description: "Plan Id"
+          type: "string"
+          format: "uuid"
+        evaluationResultId:
+          description: "evaluation Result Id"
+          type: "string"
+          format: "uuid"
+        evaluationPlanAssistantName:
+          description: "Assistant Name"
+          type: "string"
+        evaluationResultAssitantRevision:
+          description: "Result Assitant Revision"
+          type: "string"
+        evaluationResultProviderName:
+          description: "Provider"
+          type: "string"
+        evaluationResultPrompt:
+          description: "Prompt"
+          type: "string"
+        evaluationResultChunckCount:
+          description: "Chunck Count"
+          type: "integer"
+          format: "int32"
+        evaluationResultChunckSize:
+          description: "Chunck Size"
+          type: "integer"
+          format: "int64"
+        evaluationResultModelName:
+          description: "Model Name"
+          type: "string"
+        evaluationResultTemperature:
+          description: "Temperature"
+          type: "number"
+          format: "double"
+        evaluationResultaMaxTokens:
+          description: "Max Tokens"
+          type: "integer"
+          format: "int64"
+        evaluationResultaRetrievalMethod:
+          description: "Retrieval Method"
+          type: "string"
+        evaluationResultVector:
+          description: "Vector DB"
+          type: "string"
+        evaluationResultStartDate:
+          description: "Start Date"
+          type: "string"
+          format: "date"
+        evaluationResultEndDate:
+          description: "End Date"
+          type: "string"
+          format: "date"
+        evaluationResultCost:
+          description: "Result Cost"
+          type: "number"
+          format: "double"
+        evaluationResultDuration:
+          description: "Result Duration"
+          type: "integer"
+          format: "int64"
+        evaluationResultDescription:
+          description: "Result Description"
+          type: "string"
+        evaluationResultStatus:
+          description: "Result Status"
+          type: "string"
+        evaluationResultUploadFiles:
+          description: "evaluation Result Upload Files"
+          type: "boolean"
+        evaluationPlanProfileName:
+          description: "Profile Name (RAG Assistant)"
+          type: "string"
+
+        rows:
+          type: array
+          items:
+            description: rowsItem
+            $ref: "#/components/schemas/evaluationResultSDT.rows_rowsItem"
+
+        errors:
+          type: array
+          items:
+            description: Error
+            $ref: "#/components/schemas/evaluationResultSDT.errors_Error"
+
+
+    evaluationResultSDT.rows_rowsItem:
+      properties:
+        dataSetRowId:
+          description: "dataset row id"
+          type: "string"
+          format: "uuid"
+        evaluationResultRowCost:
+          description: "Row Cost"
+          type: "number"
+          format: "double"
+        evaluationResultRowOutput:
+          description: "Row Output"
+          type: "string"
+        evaluationResultRowStartDate:
+          description: "Row Start Date"
+          type: "string"
+          format: "date-time"
+        evaluationResultRowEndDate:
+          description: "Row End Date"
+          type: "string"
+          format: "date-time"
+        evaluationResultRowStatus:
+          description: "Row Status"
+          type: "string"
+
+        contexts:
+          type: array
+          items:
+            description: contextsItem
+            $ref: "#/components/schemas/evaluationResultSDT.rows.contexts_contextsItem"
+
+        statements:
+          type: array
+          items:
+            description: statementsItem
+            $ref: "#/components/schemas/evaluationResultSDT.rows.statements_statementsItem"
+
+        dataMetrics:
+          type: array
+          items:
+            description: dataMetricsItem
+            $ref: "#/components/schemas/evaluationResultSDT.rows.dataMetrics_dataMetricsItem"
+
+      x-gx-level: "evaluationResultSDT"
+
+    evaluationResultSDT.rows.contexts_contextsItem:
+      properties:
+        evaluationResultRowContextId:
+          description: "Row Context Id"
+          type: "string"
+          format: "uuid"
+        evaluationResultRowContextLink:
+          description: "Row Context Link"
+          type: "string"
+        evaluationResultRowContextChunk:
+          description: "Row Context Chunk"
+          type: "string"
+        evaluationResultRowContextPrecision:
+          description: "Row Context Precision"
+          type: "number"
+          format: "double"
+
+
+      x-gx-level: "evaluationResultSDT.rows"
+
+
+    evaluationResultSDT.rows.statements_statementsItem:
+      properties:
+        evalResultRowStatementId:
+          description: "eval Result Row Statement Id"
+          type: "string"
+          format: "uuid"
+        evalResultRowStatementDescription:
+          description: "Row Statement Description"
+          type: "string"
+        evalResultRowStatementIsInfered:
+          description: "Statement Infered from context"
+          type: "boolean"
+
+
+      x-gx-level: "evaluationResultSDT.rows"
+
+
+    evaluationResultSDT.rows.dataMetrics_dataMetricsItem:
+      properties:
+        systemMetricId:
+          description: "system Metric Id"
+          type: "string"
+          format: "uuid"
+        evaluationResultRowMetricScore:
+          description: "evaluation Result Row Metric Score"
+          type: "number"
+          format: "double"
+        evaluationResultRowMetricResult:
+          description: "evaluation Result Row Metric Result"
+          type: "string"
+        evaluationResultRowMetricFeedback:
+          description: "evaluation Result Row Metric Feedback"
+          type: "string"
+
+
+      x-gx-level: "evaluationResultSDT.rows"
+
+
+    evaluationResultSDT.errors_Error:
+      properties:
+        description:
+          description: "description"
+          type: "string"
+        id:
+          description: "id"
+          type: "integer"
+          format: "int32"
+
+
+      x-gx-level: "evaluationResultSDT"
+
+ 
