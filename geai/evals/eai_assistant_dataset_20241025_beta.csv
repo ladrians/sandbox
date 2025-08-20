@@ -1,0 +1,604 @@
+question,context,answer,good?,validated by
+Cómo hago para crear proyectos usando el API?,,"Para crear proyectos usando el API de Globant Enterprise AI, debes seguir estos pasos básicos:
+1. **Acceder a la interfaz de la API**: Primero, asegúrate de tener acceso a la Globant Enterprise AI y obtener un token API que deberás usar para autenticar tus solicitudes.
+2. **Hacer una solicitud POST**: Utiliza el endpoint correspondiente para crear un nuevo proyecto. La solicitud debe incluir un cuerpo en formato JSON con la información del proyecto, como el nombre y la descripción. 
+Aunque en la documentación no se detallan explícitamente los parámetros para crear un proyecto, normalmente incluirías elementos como:
+   ```json
+   { 
+     ""projectName"": ""Nombre del Proyecto"", 
+     ""projectDescription"": ""Descripción breve del proyecto"" 
+   }
+   ```",OK,lsilveira
+Cómo puedo integrar un asistente flow en mi aplicación web?,,"Para integrar un asistente Flow en tu aplicación web, primero debes crear el Flow usando la plataforma de Globant Enterprise AI. Aquí tienes un resumen de los pasos que debes seguir:
+
+1. **Crear un nuevo Flow**:
+   - Inicia sesión en el Globant Enterprise AI Backoffice.
+   - Selecciona el proyecto y haz clic en ""Flows"".
+   - Haz clic en el botón ""Create"" para comenzar a crear un nuevo Flow, donde necesitarás completar campos como el nombre y la descripción del Flow.
+
+2. **Configurar el Flow**:
+   - Después de crear el Flow, podrás gestionar e incluir los asistentes que deseas usar y personalizar su comportamiento (por ejemplo, configurando un nodo de Mensaje, un nodo de Entrada de Usuario para capturar las consultas del usuario, y un nodo de Asistente para responder a esas consultas).
+
+3. **Uso de Flows**:
+   - Debido a que tendrás dos tipos de Flows (flujos de conversación y flujos de asistente), deberás seleccionar y configurar el que mejor se adapte a tus necesidades. Puedes añadir nodos para determinar cómo se gestionará cada interacción (por ejemplo, usando un nodo Condicional para manejar diferentes tipos de consultas de los usuarios) [3](https://wiki.genexus.com/enterprise-ai/wiki?363).
+
+4. **Pruebas y Ajustes**:
+   - Una vez configurado el Flow, asegúrate de guardar los cambios y realiza pruebas para verificar que interactúe correctamente con los usuarios.
+   - Puedes ejecutar el Flow y acceder a una página de demostración para ver cómo funciona en un entorno real.
+
+5. **Integración en tu aplicación**:
+   - Dependiendo de cómo desees integrar el Flow, podrías necesitar la documentación específica de la API o el SDK para interactuar con los asistentes en tu aplicación web.
+
+Estos pasos te proporcionarán una base para comenzar. Si necesitas información más detallada, consulta la documentación específica sobre cómo crear Flows y utilizarlos en tu aplicación [2](https://wiki.genexus.com/enterprise-ai/wiki?322). 
+
+ https://wiki.genexus.com/enterprise-ai/wiki?31
+ https://wiki.genexus.com/enterprise-ai/wiki?322
+ https://wiki.genexus.com/enterprise-ai/wiki?17
+ https://wiki.genexus.com/enterprise-ai/wiki?322
+ https://wiki.genexus.com/enterprise-ai/wiki?363
+time: 9.01s",OK,cgurrea
+Puedo publicar un Flow en Teams o Whatsapp?,,"Sí, puedes publicar un Flow en Teams. Para ello, debes seguir una serie de pasos que incluyen la creación de un bot en el portal de desarrolladores de Teams y la configuración de la integración del Flow en la plataforma. Puedes consultar la guía completa sobre cómo exponer un Flow a través de Teams en la documentación oficial [aquí](https://wiki.genexus.com/enterprise-ai/wiki?391).
+
+En cuanto a WhatsApp, la documentación menciona que puedes configurar integraciones con Slack, WhatsApp y WhatsApp Client a través de B2Chat, lo que también sugiere que puedes publicar un Flow en WhatsApp. Para esto, deberías acceder a la sección de Integraciones al administrar tu Flow. Puedes revisar los detalles en la sección de configuración de Flows [aquí](https://wiki.genexus.com/enterprise-ai/wiki?384). 
+
+ https://wiki.genexus.com/enterprise-ai/wiki?384
+ https://wiki.genexus.com/enterprise-ai/wiki?17
+ https://wiki.genexus.com/enterprise-ai/wiki?391
+ https://wiki.genexus.com/enterprise-ai/wiki?8",OK,lsilveira
+Cómo hago para subir un archivo a un proyecto?,,"Para subir un archivo a un proyecto en Globant Enterprise AI, sigue estos pasos utilizando la API de Archivos:
+
+1. **Subir un archivo**: Utiliza el endpoint `POST /files` de la API de Archivos para subir el archivo que deseas gestionar. Aquí tienes un ejemplo del comando curl que puedes usar:
+
+   ```bash
+   curl -X POST ""$BASE_URL/v1/files"" \
+   -H ""Authorization: Bearer $SAIA_PROJECT_APITOKEN"" \
+   -H ""Accept: application/json"" \
+   -H ""fileName: $FILE_NAME"" \
+   -H ""organizationId: $ORGANIZATION_ID"" \
+   -H ""projectId: $PROJECT_ID"" \
+   -F ""file=@/path/to/file.txt""
+   ```
+
+   Reemplaza las variables `$BASE_URL`, `$SAIA_PROJECT_APITOKEN`, `$FILE_NAME`, `$ORGANIZATION_ID`, `$PROJECT_ID` y la ruta del archivo con los valores correspondientes.
+
+2. **Validar la subida**: Una vez que el archivo haya sido subido exitosamente, verifica la respuesta para ver si contiene la propiedad `success: true`. No necesitas usar un `dataFileId`, pero puedes revisar la respuesta para confirmar que el archivo fue subido correctamente.
+
+3. **Referenciar el archivo**: Después de subirlo, puedes referenciar el archivo en tus solicitudes a los modelos, utilizando el nombre del archivo que subiste.
+
+Para obtener más información, consulta la sección sobre cómo [subir y gestionar archivos a través de la API](https://wiki.genexus.com/enterprise-ai/wiki?454). [2](https://wiki.genexus.com/enterprise-ai/wiki?454) ",OK,lsilveira
+Cómo puedo usar un archivo como contexto del prompt de un asistente?,,"Puedes usar un archivo como contexto del prompt de un asistente mediante las siguientes funcionalidades disponibles en ""File Support in Assistants"":
+
+1. **Subida del Archivo**: Primero, debes subir tu archivo usando la interfaz del asistente. Puedes hacer clic en el botón “Upload File” y seleccionar el archivo que deseas utilizar.
+
+2. **Referencias de Archivos**: En tu prompt, puedes hacer referencia a los archivos subidos usando la sintaxis `{file:filename}`. Por ejemplo, podrías escribir un prompt como: “Resume los puntos clave del documento `{file:contract}`”, donde `contract` es el nombre del archivo subido.
+
+3. **Preguntas Basadas en Documentos**: Puedes hacer preguntas específicas basadas en el contenido del archivo que has subido. Esto permite que el asistente responda utilizando el contexto proporcionado por el archivo.
+
+4. **Tipos de Archivos**: El soporte de archivos no se limita solo a documentos; también puedes trabajar con imágenes, videos y archivos de audio usando una sintaxis similar, como `{file:image1}` para imágenes o `{file:video1}` para videos.
+
+5. **Resultados**: Una vez que envíes tu prompt, el asistente procesará tu solicitud utilizando el archivo como referencia y mostrará los resultados en base al contenido del archivo.
+
+Puedes consultar más detalles sobre el soporte de archivos en los asistentes en la siguiente referencia: [File Support in Assistants](https://wiki.genexus.com/enterprise-ai/wiki?346). 
+
+ https://wiki.genexus.com/enterprise-ai/wiki?346
+ https://wiki.genexus.com/enterprise-ai/wiki?322
+ https://wiki.genexus.com/enterprise-ai/wiki?349
+ https://wiki.genexus.com/enterprise-ai/wiki?85
+ https://wiki.genexus.com/enterprise-ai/wiki?322",OK,kbaz
+Cómo se implementa un asistente RAG?,,"Para implementar un asistente RAG en Globant Enterprise AI, debes seguir varios pasos en función de las fases del proceso descritas en la documentación. Aquí tienes un resumen de cómo funciona:
+
+1. **Ingesta de Datos**: Este es el primer paso donde cargas diferentes tipos de documentos desde múltiples fuentes. Se debe configurar una estrategia de segmentación de los datos, donde los fragmentos, conocidos como ""chunks"", son preparados para la recuperación futura. La configuración de chunks incluye definir el tamaño y la superposición de los mismos (por defecto, 1000 caracteres y 100 caracteres de superposición) [4](https://wiki.genexus.com/enterprise-ai/wiki?44).
+
+2. **Recuperación**: En esta fase, se accede a la base de datos vectorial donde los documentos ingeridos son indexados. Los embeddings son generados a partir de los documentos y la consulta del usuario, capturando la esencia contextual de la información [4](https://wiki.genexus.com/enterprise-ai/wiki?44).
+
+3. **Generación**: Se utiliza la configuración del asistente RAG para definir qué modelo se accederá y con qué parámetros. Esto incluye prompts que guían la generación de respuestas relevantes y coherentes [4](https://wiki.genexus.com/enterprise-ai/wiki?44).
+
+4. **Interacción con el Usuario**: Finalmente, la arquitectura permite la comunicación entre los usuarios y los asistentes RAG a través de una API, facilitando la obtención de respuestas a consultas de manera eficiente [4](https://wiki.genexus.com/enterprise-ai/wiki?44).
+
+Es importante asegurarse de que todo esté correctamente configurado en las opciones del proyecto, y se puede personalizar el comportamiento de los asistentes RAG a través de las secciones específicas de la plataforma [1](https://wiki.genexus.com/enterprise-ai/wiki?64). 
+
+ https://wiki.genexus.com/enterprise-ai/wiki?64
+ https://wiki.genexus.com/enterprise-ai/wiki?31
+ https://wiki.genexus.com/enterprise-ai/wiki?61
+ https://wiki.genexus.com/enterprise-ai/wiki?44
+ https://wiki.genexus.com/enterprise-ai/wiki?322",puede mejorar,lsilveira
+What role is required to configure quota limits for projects?,,"To configure quota limits for projects, you need the **Organization** role. This role allows access to manage quota limits for each project in the Globant Enterprise AI backoffice. 
+
+For more details, you can refer to the section on [Managing quotas per project](https://wiki.genexus.com/enterprise-ai/wiki?71). 
+
+ 31 https://wiki.genexus.com/enterprise-ai/wiki?31
+ 42 https://wiki.genexus.com/enterprise-ai/wiki?42
+ 71 https://wiki.genexus.com/enterprise-ai/wiki?71",OK,lsilveira
+Where can you find the option to manage quota limits for each project?,,"You can find the option to manage quota limits for each project in the **Projects** section of the Globant Enterprise AI backoffice. To access and configure quota limits, you need the Organization role. After selecting the desired project, you can click on the **USAGE LIMITS** link to manage the quota limits. 
+
+For more details, you can refer to the [Managing quotas per project](https://wiki.genexus.com/enterprise-ai/wiki?71) documentation. 
+
+ 31 https://wiki.genexus.com/enterprise-ai/wiki?31
+ 42 https://wiki.genexus.com/enterprise-ai/wiki?42
+ 71 https://wiki.genexus.com/enterprise-ai/wiki?71",OK,lsilveira
+how do I use the chat API?,,"To use the Chat API, you need to follow a few steps:
+
+Initialize with an API Token: First, you need to acquire an API token associated with your project scope. This token is used in the authorization header for making API requests.
+
+Create an Assistant: You can create a chat assistant by defining its type and prompt. Here’s an example of creating an assistant with variables:
+
+curl --location 'https://api.saia.ai/v1/assistant' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer $SAIA_APITOKEN' \
+--data '{ ""type"": ""chat"", ""name"": ""Test-variables"", ""prompt"": ""You are a translator. Translate to {language}.""}'
+Use the Assistant: Once created, you can interact with the assistant by sending requests containing a model, messages, and any variables defined in the assistant. Here is a sample curl request using an assistant:
+
+curl --location 'https://api.saia.ai/chat' \
+--header 'Saia-Auth: $SAIA_APITOKEN' \
+--header 'X-Saia-Cache-Enabled: false' \
+--header 'Content-Type: application/json' \
+--data '{ ""model"": ""saia:assistant:Test-variables"", ""messages"": [ { ""role"": ""user"", ""content"": ""Hello"" } ], ""variables"": [ { ""key"": ""language"", ""value"": ""French"" } ], ""stream"": false}'
+Make sure to replace $SAIA_APITOKEN with your actual API token and customize the messages and variables as per your needs.
+
+For more detailed instructions and available options, you can refer to the API documentation here.
+
+ 29 https://wiki.genexus.com/enterprise-ai/wiki?29
+ 34 https://wiki.genexus.com/enterprise-ai/wiki?34
+ 69 https://wiki.genexus.com/enterprise-ai/wiki?69
+ 33 https://wiki.genexus.com/enterprise-ai/wiki?205
+ 205 https://wiki.genexus.com/enterprise-ai/wiki?15",OK,lsilveira
+How do you maintain the context of a conversation in the Chat API?,,"To maintain the context of a conversation in the Chat API, you can utilize the following features:
+
+1. **Include Conversation History**: This option is enabled by default, allowing the assistant to take previous messages into account during interactions. This means that the history of the conversation is included in the context, helping the assistant understand the current query better.
+
+2. **Include Context Variables**: This feature is also enabled by default and permits the storage of context variables during the conversation. These variables can be sent to the assistant to enhance responses based on previous interactions.
+
+3. **History Prompt Usage**: The handling of historical interactions is managed through what is known as the History Prompt. This enables the system to either compress the history and create a concise summary or use the last few interactions directly, depending on the specific configuration.
+
+4. **Compact History Option**: You can customize how the RAG Assistant handles conversation history by setting a `compactHistory` option to `compact` (default) or `none`. Using `compact` summarizes the conversation history, while `none` allows the assistant to use the last n interactions as defined by the History Message Count parameter.
+
+This approach ensures that the context is relevant and tailored to the interactions, enhancing the assistant's ability to provide accurate and meaningful responses. 
+
+For more details, you can refer to the following context pieces: [How to create a Flow](https://wiki.genexus.com/enterprise-ai/wiki?322) and [History Prompt Usage](https://wiki.genexus.com/enterprise-ai/wiki?297). 
+
+ 322 https://wiki.genexus.com/enterprise-ai/wiki?322
+ 31 https://wiki.genexus.com/enterprise-ai/wiki?31
+ 297 https://wiki.genexus.com/enterprise-ai/wiki?297
+ 15 https://wiki.genexus.com/enterprise-ai/wiki?15
+ 363 https://wiki.genexus.com/enterprise-ai/wiki?363",puede mejorar,lsilveira
+What does the Organization API provide?,,"The Organization API provides endpoints to retrieve organization data, such as projects and requests. It allows users to fetch project details and export request data. Key functionalities include:
+
+- Getting the list of assistants
+- Getting the list of projects
+- Getting details about a specific project
+- Creating and updating projects
+- Deleting projects
+- Getting the list of tokens for a project
+- Exporting request data
+
+Additionally, it requires a Globant Enterprise AI API token related to **organization** scope for authentication [1](https://wiki.genexus.com/enterprise-ai/wiki?22). 
+
+ 22 https://wiki.genexus.com/enterprise-ai/wiki?22
+ 20 https://wiki.genexus.com/enterprise-ai/wiki?20
+ 42 https://wiki.genexus.com/enterprise-ai/wiki?42
+ 42 https://wiki.genexus.com/enterprise-ai/wiki?42",OK,lsilveira
+What does the 'score' element in the response indicate?,,"The 'score' element in the response indicates the semantic similarity between the `question` and the associated `pageContent`. It is a value ranging from 0 to 1, where 1 signifies the closest match. This score helps to assess how relevant the retrieved content is to the question posed. If available, the `score` can provide insight into the quality of the response based on the content's alignment with the query. More details can be found in the context of the Chat with Documents API [3](https://wiki.genexus.com/enterprise-ai/wiki?33). 
+
+ 445 https://wiki.genexus.com/enterprise-ai/wiki?445
+ 70 https://wiki.genexus.com/enterprise-ai/wiki?70
+ 33 https://wiki.genexus.com/enterprise-ai/wiki?33
+ 407 https://wiki.genexus.com/enterprise-ai/wiki?407
+",OK,lsilveira
+What is required to use the endpoints,,"To use the endpoints of the Globant Enterprise AI APIs, you need a Globant Enterprise AI API token that is related to the appropriate scope. Specifically:
+
+1. **RAG Assistants API**: Requires an API token related to **project** scope.
+2. **Assistant API**: Also requires an API token related to **project** scope.
+3. **Organization API**: Requires an API token related to **organization** scope.
+4. **Chat with Documents API**: Requires an API token related to **project** scope.
+
+You can check the generic variables needed for authentication across these APIs.
+
+References:
+- [RAG Assistants API](https://wiki.genexus.com/enterprise-ai/wiki?29)
+- [Assistant API](https://wiki.genexus.com/enterprise-ai/wiki?35)
+- [Organization API](https://wiki.genexus.com/enterprise-ai/wiki?22)
+- [Chat with Documents API](https://wiki.genexus.com/enterprise-ai/wiki?33) 
+
+ 29 https://wiki.genexus.com/enterprise-ai/wiki?29
+ 35 https://wiki.genexus.com/enterprise-ai/wiki?35
+ 22 https://wiki.genexus.com/enterprise-ai/wiki?22
+ 149 https://wiki.genexus.com/enterprise-ai/wiki?149
+ 33 https://wiki.genexus.com/enterprise-ai/wiki?33",OK,lsilveira
+What type of input can be provided to the Embeddings API?,,"The Embeddings API accepts input in the following formats:
+
+1. **Single String**: You can provide a single string as input to embed.
+2. **Array of Strings**: You can also pass an array of strings to embed multiple inputs in a single request.
+
+The input text must be encoded as a string and cannot exceed the maximum input tokens for the selected model. Additionally, it cannot be an empty string.
+
+For example, the input can be structured like this:
+- For a single string:
+```json
+{ ""model"": ""openai/text-embedding-3-small"", ""input"" : ""Help me with Globant Enterprise AI!"" }
+```
+- For multiple strings:
+```json
+{ ""model"": ""openai/text-embedding-3-small"", ""input"" : [""Help me with"", ""Globant Enterprise AI!""] }
+```
+
+This information can be found in the documentation for the Embeddings API [here](https://wiki.genexus.com/enterprise-ai/wiki?422). 
+
+ 447 https://wiki.genexus.com/enterprise-ai/wiki?447
+ 422 https://wiki.genexus.com/enterprise-ai/wiki?422
+",OK,lsilveira
+How do you upload a file using the File API?,,"To upload a file using the File API, follow these steps:
+
+1. **Choose the File API Endpoint**: Use the `POST /files` endpoint to upload your file.
+
+2. **Prepare Your Request**: You will need to include the required headers and parameters:
+   - **Authorization**: Use your Bearer token for authentication.
+   - **fileName**: (optional) Specify the name of the file you want to reference later.
+   - **organizationId**: Your organization ID.
+   - **projectId**: Your project ID.
+   - **folder**: (optional) Specify a destination folder; if not provided, the file will be saved temporarily.
+
+3. **Sample cURL Command**:
+   ```bash
+   curl -X POST ""$BASE_URL/v1/files"" \
+   -H ""Authorization: Bearer $SAIA_PROJECT_APITOKEN"" \
+   -H ""Accept: application/json"" \
+   -H ""fileName: $FILE_NAME"" \
+   -H ""organizationId: $ORGANIZATION_ID"" \
+   -H ""projectId: $PROJECT_ID"" \
+   -H ""folder: $FOLDER"" \
+   -F ""file=@/path/to/file.txt""
+   ```
+
+4. **Check the Response**: After submitting your request, you will receive a response confirming the success of the operation. A successful response will look like this:
+   ```json
+   { ""dataFileId"": ""string"", ""dataFileUrl"": ""string"", ""success"": true }
+   ```
+
+5. **Referencing the File**: Once the file is successfully uploaded, you can reference it in subsequent requests by the name you specified or the original name of the uploaded file, if you did not specify a file name.
+
+For more information, you can refer to the detailed steps in the File API documentation [here](https://wiki.genexus.com/enterprise-ai/wiki?450). 
+
+ 346 https://wiki.genexus.com/enterprise-ai/wiki?346
+ 202 https://wiki.genexus.com/enterprise-ai/wiki?202
+ 454 https://wiki.genexus.com/enterprise-ai/wiki?454
+ 450 https://wiki.genexus.com/enterprise-ai/wiki?450",OK,lsilveira
+How can you retrieve the content of a file?,,"To retrieve the content of a file, you can use the `GET /{fileId}/content` endpoint of the File API. This endpoint requires a GeneXus Enterprise AI API token related to your organization scope. Here is how you can do it:
+
+### Parameters:
+- `organization`: Your Organization Id.
+- `project`: Your Project Id.
+- `fileId`: The Id of the file you want to retrieve.
+
+### Sample cURL Command:
+```bash
+curl -X GET ""$BASE_URL/v1/{fileId}/content"" \
+-H ""Authorization: Bearer $SAIA_APITOKEN"" \
+-H ""Accept: application/json"" \
+-G -d ""organization=$ORGANIZATION_ID"" \
+-d ""project=$PROJECT_ID""
+```
+
+### Response:
+You will receive a response containing the file content in the following JSON format:
+```json
+{ ""content"": ""string"" }
+```
+
+For more detailed information, you can refer to the documentation on the [File API](https://wiki.genexus.com/enterprise-ai/wiki?450). 
+
+ 346 https://wiki.genexus.com/enterprise-ai/wiki?346
+ 454 https://wiki.genexus.com/enterprise-ai/wiki?454
+ 205 https://wiki.genexus.com/enterprise-ai/wiki?205
+ 450 https://wiki.genexus.com/enterprise-ai/wiki?450
+ 345 https://wiki.genexus.com/enterprise-ai/wiki?345",OK,lsilveira
+What types of assistants can be integrated with Flows?,,"Flows allow the integration of several types of assistants, including:
+
+- **Data Analyst Assistant**
+- **API Assistant**
+- **Chat with Data Assistant**
+- **RAG Assistant**
+
+This enables the development of conversational solutions that can draw on various functionalities simultaneously, providing enriched interactions with end users. For more details, you can refer to the Flows in Globant Enterprise AI documentation [here](https://wiki.genexus.com/enterprise-ai/wiki?321). 
+
+ 31 https://wiki.genexus.com/enterprise-ai/wiki?31
+ 321 https://wiki.genexus.com/enterprise-ai/wiki?321
+ 384 https://wiki.genexus.com/enterprise-ai/wiki?384
+ 322 https://wiki.genexus.com/enterprise-ai/wiki?322
+ 363 https://wiki.genexus.com/enterprise-ai/wiki?363",,
+How does the Conditional component function in the Flow?,,"The Conditional component in a Flow functions by allowing the evaluation of user queries to determine which assistant is most appropriate to respond. Here's how it works:
+
+1. **Branching Logic**: When you add a Conditional component, it creates a branch with two paths: one labeled ""If"" and the other labeled ""Else."" This structure enables evaluation of a condition and directs the flow based on the result.
+
+2. **Adding Conditions**: You can add additional conditions by using the ""Add condition"" option. Each condition is evaluated using Expression nodes that allow for different conditional expressions.
+
+3. **Evaluating Variables**: To evaluate conditions, you can incorporate variables (like `orchestrationResponse`) to determine which assistant to direct the flow to. Depending on the value of this variable, the flow can branch to the appropriate assistant, such as redirecting to the Movie Ticket Assistant or the Mall Shops Catalog.
+
+4. **Message Handling**: In cases where the conditions are not met, the flow can continue through the Else branch, where a default action (like sending a message back to the user) is implemented. This ensures users receive appropriate responses regardless of whether their query matches specific conditions.
+
+5. **Response Flow**: After processing the query, the flow can return to the User Input node, facilitating a continuous conversation with the user.
+
+This mechanism allows for a more interactive and responsive experience, adapting to user inputs effectively. 
+
+For more detailed steps and visuals, you can refer to [this guide](https://wiki.genexus.com/enterprise-ai/wiki?363). 
+
+ 363 https://wiki.genexus.com/enterprise-ai/wiki?363
+ 371 https://wiki.genexus.com/enterprise-ai/wiki?371
+ 363 https://wiki.genexus.com/enterprise-ai/wiki?363
+ 8 https://wiki.genexus.com/enterprise-ai/wiki?8",,
+How do you reference a file in a prompt?,,"To reference a file in a prompt, you can use the following syntax: `{file:filename}`. For example, if you have a file named ""report.pdf"", you would write it as `{file:report}`. This format allows you to include the file directly in your prompt for the model to process.
+
+It's important to note that this reference format only works for files that have already been uploaded to your project. If you're uploading a file for the first time, you need to use the standard file upload mechanism within the platform [3](https://wiki.genexus.com/enterprise-ai/wiki?345). 
+
+ 346 https://wiki.genexus.com/enterprise-ai/wiki?346
+ 454 https://wiki.genexus.com/enterprise-ai/wiki?454
+ 345 https://wiki.genexus.com/enterprise-ai/wiki?345",OK,lsilveira
+What types of files are supported?,,"Globant Enterprise AI supports various file types across different functionalities. The following file formats are explicitly listed:
+
+1. **Standard Document Formats**:
+   - Text: .txt
+   - Portable: .pdf
+   - Microsoft Office: .docx, .pptx, .xlsx
+   - Open Document: .odt, .odp, .ods
+   - Ebook: .epub
+   - JSON: .json, .jsonl
+   - Comma-Separated Values: .csv
+
+2. **Custom Formats**:
+   - Custom: .custom
+   - Web pages: .web
+
+3. **Image and Video Formats**:
+   - Images: .png (while not explicitly listed in the RAG formats, it is mentioned as supported in multimodal scenarios)
+   - Videos: .mp4 (also supported in multimodal scenarios)
+
+4. **Multimodal Models**: 
+   - The multimodal models extend support to various file types, allowing the processing of text documents, images, audio, and video in a seamless way.
+
+Additionally, models may have their specific file support limitations. For example, certain models support PDFs and text files but may not support images or videos. 
+
+For more detailed information about file formats supported by specific models, refer to the supported models and file formats section [here](https://wiki.genexus.com/enterprise-ai/wiki?406) and for general file support, refer [here](https://wiki.genexus.com/enterprise-ai/wiki?137). 
+
+You can also find details on file management and usage [here](https://wiki.genexus.com/enterprise-ai/wiki?450) and the interaction capabilities with multimodal models [here](https://wiki.genexus.com/enterprise-ai/wiki?345). 
+
+ 346 https://wiki.genexus.com/enterprise-ai/wiki?346
+ 406 https://wiki.genexus.com/enterprise-ai/wiki?406
+ 450 https://wiki.genexus.com/enterprise-ai/wiki?450
+ 137 https://wiki.genexus.com/enterprise-ai/wiki?137
+ 345 https://wiki.genexus.com/enterprise-ai/wiki?345",No,lsilveira
+what LLM providers are supported?,,"The supported LLM providers include:
+
+1. **OpenAI**
+2. **Google Generative AI**
+3. **Google VertexAI**
+4. **Anthropic**
+5. **Azure OpenAI**
+6. **NVidia**
+
+Additionally, specific models include various options from these providers, such as OpenAI's GPT models, Google's Gemini series, and different models from NVidia like Llama and Mixtral [3](https://wiki.genexus.com/enterprise-ai/wiki?153). 
+
+ 15 https://wiki.genexus.com/enterprise-ai/wiki?15
+ 19 https://wiki.genexus.com/enterprise-ai/wiki?19
+ 31 https://wiki.genexus.com/enterprise-ai/wiki?31
+ 153 https://wiki.genexus.com/enterprise-ai/wiki?153",OK,lsilveira
+What happens after submitting a prompt to the assistant?,,"After submitting a prompt to the assistant, the assistant processes the request and generates a response based on the instructions provided in the prompt and the context available. The results are then displayed to the user. The process typically involves the following steps:
+
+1. **Prompt Submission**: The user enters their instructions into the prompt box and submits it (by clicking the arrow icon or pressing Enter).
+2. **Processing Request**: The assistant takes into account the uploaded file(s) and the context set by the user.
+3. **Result Generation**: The assistant processes the input according to the defined configurations, such as the prompt settings and history message count.
+4. **Display Results**: Finally, the assistant outputs the generated response based on the user's request.
+
+This interaction emphasizes the importance of the assistant's configuration, which guides how it approaches and responds to the user's input, including consideration of context and history of previous interactions [3](https://wiki.genexus.com/enterprise-ai/wiki?69). 
+
+ 64 https://wiki.genexus.com/enterprise-ai/wiki?64
+ 346 https://wiki.genexus.com/enterprise-ai/wiki?346
+ 69 https://wiki.genexus.com/enterprise-ai/wiki?69
+ 105 https://wiki.genexus.com/enterprise-ai/wiki?105
+ 322 https://wiki.genexus.com/enterprise-ai/wiki?322",OK,lsilveira
+What is the purpose of managing roles and permissions?,,"The purpose of managing roles and permissions in Globant Enterprise AI is to define which actions and functionalities users can perform based on their roles within a project. This system enhances security management by assigning permissions through roles rather than directly to users, controlling access to various actions in the Backoffice and specific assistants from the Frontend. Each project generates default roles that allow different levels of access and functions, helping ensure users have the appropriate permissions needed for their responsibilities.
+
+For more details, see [Managing Roles and Permissions in Globant Enterprise AI](https://wiki.genexus.com/enterprise-ai/wiki?242) [2](https://wiki.genexus.com/enterprise-ai/wiki?245) [3](https://wiki.genexus.com/enterprise-ai/wiki?253). 
+
+ 31 https://wiki.genexus.com/enterprise-ai/wiki?31
+ 242 https://wiki.genexus.com/enterprise-ai/wiki?242
+ 245 https://wiki.genexus.com/enterprise-ai/wiki?245
+ 253 https://wiki.genexus.com/enterprise-ai/wiki?253",OK,lsilveira
+How are permissions assigned to users?,,"In Globant Enterprise AI, permissions are managed through roles rather than being assigned directly to users. Here's how the process works:
+
+1. **Roles Creation**: Each project has four default roles that allow for different levels of access and functions:
+   - **Project Member**: Access to create assistants, view requests, and create API tokens.
+   - **Project Administrator**: Includes Project Member permissions and allows managing project members and roles.
+   - **Access all Project Assistants**: Grants frontend access to all active project assistants.
+   - **Access for Project Assistants without Membership**: Provides frontend access to specific assistants without requiring the user to be a registered member of the project.
+
+2. **Role Assignment**: Users are assigned one or more of these roles. This assignment controls their access to various functionalities within the Backoffice and to specific assistants in the Frontend.
+
+3. **Managing Users and Permissions**: The ""Members"" section within the project allows for viewing and managing the list of users who have access. Here, you can assign or revoke roles from users. Invitations to new users can also be sent from this section, and the role assignments can be modified at any time.
+
+This management system ensures that permissions are granted based on the roles assigned to users, allowing for structured and secure access control. 
+
+For further details, please refer to the relevant sections here: 
+- [Managing Roles and Permissions in Globant Enterprise AI](https://wiki.genexus.com/enterprise-ai/wiki?242) 
+- [Managing Roles and Permissions in Globant Enterprise AI: Members](https://wiki.genexus.com/enterprise-ai/wiki?253). 
+
+ 264 https://wiki.genexus.com/enterprise-ai/wiki?264
+ 31 https://wiki.genexus.com/enterprise-ai/wiki?31
+ 242 https://wiki.genexus.com/enterprise-ai/wiki?242
+ 245 https://wiki.genexus.com/enterprise-ai/wiki?245
+ 253 https://wiki.genexus.com/enterprise-ai/wiki?253",OK,lsilveira
+What happens if a user has multiple Frontend roles assigned?,,"If a user has multiple Frontend roles assigned, they will see the combined list of assistants included in all their assigned roles, even if assistants are repeated across roles. This allows for broader access to various assistants depending on the roles assigned to the user. 
+
+You can find this information in the context piece on managing roles and permissions [here](https://wiki.genexus.com/enterprise-ai/wiki?245). 
+
+ 242 https://wiki.genexus.com/enterprise-ai/wiki?242
+ 245 https://wiki.genexus.com/enterprise-ai/wiki?245
+",OK,lsilveira
+Which embedding model is supported by AWS Bedrock?,,"The supported embedding models by AWS Bedrock include:
+
+- amazon.titan-embed-v2 (Check the model dimensions configuration)
+- cohere.embed-english
+- cohere.embed-multilingual
+
+You can find more details in the context provided [here](https://wiki.genexus.com/enterprise-ai/wiki?447). 
+
+ 200 https://wiki.genexus.com/enterprise-ai/wiki?200
+ 447 https://wiki.genexus.com/enterprise-ai/wiki?447
+ 31 https://wiki.genexus.com/enterprise-ai/wiki?31
+ 406 https://wiki.genexus.com/enterprise-ai/wiki?406
+",OK,lsilveira
+Which LLM model is supported by AWS Bedrock?,,"The LLM models supported by AWS Bedrock include:
+
+- anthropic/claude-3-haiku
+- anthropic/claude-3-sonnet
+- anthropic/claude-3.5-sonnet
+- anthropic/claude-3-opus
+- awsbedrock/meta.llama3-8b
+- awsbedrock/meta.llama3-70b
+- awsbedrock/amazon.titan-lite-v1
+- awsbedrock/amazon.titan-express-v1
+- awsbedrock/cohere.command
+- awsbedrock/meta.llama3-1-70b
+- awsbedrock/meta.llama3-1-405b
+
+This information can be found in the supported chat models section of the documentation [here](https://wiki.genexus.com/enterprise-ai/wiki?200). 
+
+ 200 https://wiki.genexus.com/enterprise-ai/wiki?200
+ 15 https://wiki.genexus.com/enterprise-ai/wiki?15
+ 19 https://wiki.genexus.com/enterprise-ai/wiki?19
+ 31 https://wiki.genexus.com/enterprise-ai/wiki?31",OK,lsilveira
+Cuales son las api que dispone Globant Enterprise AI ?,,"Globant Enterprise AI ofrece varias APIs, que permiten la integración con sistemas de Modelos de Lenguaje Grande (LLM) y realizar acciones que modifican los metadatos de la plataforma. Las siguientes son las APIs disponibles:
+
+Organization API
+Assistant API
+Chat API
+RAG Assistants API
+Chat with Documents API
+Feedback API
+File API
+Puedes encontrar más detalles en la referencia de la API de Globant Enterprise AI 2.",OK,mrestrepo
+"
+Para que sirve un flow y como creo uno ?",,"Un Flow en Globant Enterprise AI es una solución que permite crear interacciones conversacionales personalizadas para las necesidades específicas de una empresa. Aprovechando las capacidades de inteligencia artificial generativa y determinista, los Flows mejoran la interacción con los usuarios finales, facilitando la creación de chatbots y la integración de asistentes especializados, como el Data Analyst Assistant, API Assistant, Chat with Data Assistant y RAG Assistant. Esto permite combinar diferentes tipos de interacciones para proporcionar respuestas más completas y precisas a los usuarios 1.
+
+Cómo crear un Flow:
+Iniciar sesión en el Backoffice de Globant Enterprise AI.
+Seleccionar el proyecto en el que deseas trabajar.
+Hacer clic en Flows en el menú de la izquierda.
+Hacer clic en el botón Crear para iniciar un nuevo flow.
+Completar la información requerida:
+Nombre: Un nombre descriptivo para identificar el flow.
+Descripción: Opcional, pero recomendable para aclarar el propósito del flow.
+Tipo: Seleccionar entre ""Chat Flow"" o ""Assistant Flow"" según lo que se necesite 4.
+Así, podrás crear y gestionar Flows que enriquezcan las interacciones con tus usuarios finales.
+
+Enterprise AI
+Flows in Globant Enterprise AI
+Help
+How to create a Flow
+User's Guide for Globant Enterprise AI Flow ",OK,mrestrepo
+"
+cuales son los modelos de open ai soportados ?",,"
+Los modelos de OpenAI soportados son:
+
+openai/gpt-3.5-turbo
+openai/gpt-4-0125-preview
+openai/gpt-4
+openai/gpt-3.5-turbo-1106
+openai/gpt-3.5-turbo-0125
+openai/chatgpt-4o-latest
+openai/gpt-4o-2024-08-06
+openai/gpt-4o
+openai/gpt-4o-mini
+openai/gpt-4-turbo
+openai/gpt-4-turbo-preview
+openai/o1-preview
+openai/o1-mini
+Estos modelos admiten funcionalidades de chat y llamadas de función, y son compatibles con los entornos Beta, QA y producción 3.
+
+Supported Embeddings Models
+Configuration - General Information
+How to use API Assistant
+Supported Chat Models (v2)
+Supported LLMs",OK,mrestrepo
+"
+cuales son los modelos de openai soportados solo en beta ?",,"
+Los modelos de OpenAI soportados solo en beta son:
+
+openai/o1-preview
+openai/o1-mini
+Estos modelos tienen soporte para el entorno beta según la documentación de los Modelos de Chat soportados. Para más información, puedes consultar el siguiente enlace: 2.",OK,mrestrepo
+Como utilizar el soporte de archivos por asistentes ?,,"Para utilizar el soporte de archivos por asistentes en Globant Enterprise AI, puedes seguir los siguientes pasos que son parte de la documentación:
+
+Procesamiento de Archivos: A partir de los recientes cambios, hay soporte para el procesamiento de archivos en asistentes basados en prompts. Esto incluye la capacidad de cargar documentos y realizar acciones como resumir, extraer y verificar información.
+
+Formatos de Archivo Soportados: Los formatos de archivo que se pueden utilizar incluyen PDF, txt, png, docx y mp4. Sin embargo, la compatibilidad de los formatos puede variar según el modelo utilizado.
+
+Subida y Gestión de Archivos: Se menciona que hay mejoras en la gestión de archivos, lo que facilita la interacción con documentos desde la interfaz de usuario. Esto incluye la opción de cargar documentos desde el frontend para chatear con ellos.
+
+Para más detalles sobre los modelos y sus formatos compatibles, puedes consultar esta sección específica de la documentación Supported models and file formats. También, hay una sección dedicada a cómo subir y gestionar archivos a través de la API How to upload and manage Files via API.
+
+Toda esta información se puede encontrar en el contexto sobre el soporte de archivos para asistentes y otros aspectos relacionados con la gestión de archivos en la plataforma. 1, 2.
+
+Enterprise AI
+Updates Log
+Supported LLMs
+Supported models and file formats",OK,mrestrepo
+"
+cuales son los formatos de archivos soportados por modelo ?",,"Los formatos de archivos soportados por los modelos de Globant Enterprise AI incluyen:
+
+PDF
+txt
+png
+docx
+mp4
+Estos formatos son compatibles con varios modelos multimodales, pero la compatibilidad puede variar entre los modelos. Por ejemplo, algunos modelos admiten PDF y txt, pero no todos son compatibles con png o mp4.
+
+Para más detalles, puedes consultar el contexto aquí.
+
+File Support in Assistants
+Enterprise AI
+How to upload and manage Files via API
+Supported models and file formats
+RAG File Formats",OK,mrestrepo
+"
+Que tipo de archivo soporta el modelo vertex_ai-gemini-1.5-flash",,"El modelo vertex_ai-gemini-1.5-flash soporta el siguiente tipo de archivo:
+
+PDF
+Sin embargo, los formatos de archivo txt, png, docx, y mp4 no están soportados. Por lo tanto, solo puedes interactuar con este modelo utilizando archivos en formato PDF. 3
+
+Updates Log
+Supported Chat Models (v2)
+Supported models and file formats
+File support for multimodal models",OK,mrestrepo
+"
+dame un ejemplo de como subir un archivo via api",,"
+Para subir un archivo a través de la API de File, puedes utilizar el endpoint POST /files. A continuación se presenta un ejemplo de cómo hacerlo utilizando cURL:
+
+
+curl -X POST ""$BASE_URL/v1/files"" \
+-H ""Authorization: Bearer $SAIA_PROJECT_APITOKEN"" \
+-H ""Accept: application/json"" \
+-H ""fileName: $FILE_NAME"" \
+-H ""organizationId: $ORGANIZATION_ID"" \
+-H ""projectId: $PROJECT_ID"" \
+-F ""file=@/path/to/file.txt""
+En este comando, reemplaza $BASE_URL, $SAIA_PROJECT_APITOKEN, $FILE_NAME, $ORGANIZATION_ID, $PROJECT_ID y @/path/to/file.txt con los valores correspondientes de tu entorno y archivo.
+
+Después de la subida, recibirás una respuesta confirmando el éxito de la operación, que debería verse así:
+
+
+{ ""dataFileId"": ""string"", ""dataFileUrl"": ""string"", ""success"": true }
+Este proceso permite que el archivo sea referenciado para operaciones posteriores, como análisis o resúmenes. Para más información, consulta la sección Cómo subir y gestionar archivos a través de la API 4.",OK,mrestrepo
+"
+Cuales son los vectorstores soportados ?",,"Los vectorstores soportados en la solución Globant Enterprise AI incluyen:
+
+Pinecone (por defecto)
+Azure AI Search
+pgvector (disponible para instalaciones on-premises)
+Redis Search (disponible para instalaciones on-premises)
+MongoDB Atlas Vector Search (disponible para instalaciones on-premises)
+Además, se está evaluando la opción de Chroma.
+
+Puedes encontrar más detalles en la documentación Supported Vector Store Provider.
+
+Supported Vector Store Provider
+RAG Assistants Introduction
+VectorStore Search Options",OK,mrestrepo
